@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, computed, Input, input } from '@angular/core';
 import { DUMMY_USERS } from './dummy-users';
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
@@ -20,11 +20,7 @@ export class UserComponent {
   //accept Input with Signals
   avatar = input.required<string>(); //this property should be an input to this componant
   name = input.required<string>(); //<> using generic to decide what datatype should be assigned
-
-  get imagePath() {
-    return 'assets/users/' + this.avatar;
-  }
-
+  imagePath = computed(() => 'assets/users/' + this.avatar());
   onSelectUser() {}
 
   //add users dynamically

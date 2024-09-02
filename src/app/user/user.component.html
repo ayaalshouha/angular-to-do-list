@@ -2,7 +2,7 @@
   <!-- adding event listner to button by () -->
   <button (click)="onSelectUser()">
     <!-- property binding-->
-    <img [src]="imagePath" [alt]="name"/>
-    <span> {{ name }}</span>
+    <img [src]="imagePath" [alt]="name()"/>
+    <span> {{ name() }}</span>
   </button>
 </div>
