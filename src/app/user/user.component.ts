@@ -14,13 +14,13 @@ export class UserComponent {
   //all members declared in the class will be available in template file
 
   //! tells typescript that we know that tis will be set to some value even if ys cant see it here, will be assigned outside the scope
-  @Input() avatar!: string;
-  @Input() name!: string;
+  @Input({required:true}) avatar!: string;
+  @Input({required:true}) name!: string;
 
   get imagePath(){
     return 'assets/users/' + this.avatar;
   }
-  
+
   onSelectUser() {}
 
   //add users dynamically
