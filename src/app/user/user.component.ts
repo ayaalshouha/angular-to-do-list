@@ -1,4 +1,4 @@
-import { Component , computed, signal} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DUMMY_USERS } from './dummy-users';
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
@@ -8,24 +8,28 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   standalone: true,
   imports: [],
   templateUrl: './user.component.html',
-  styleUrl: './user.component.css'
+  styleUrl: './user.component.css',
 })
-
 export class UserComponent {
   //all members declared in the class will be available in template file
 
-  //add users dynamically
-  selectedUser = signal(DUMMY_USERS[randomIndex]);
-  imagePath = computed(() => 'assets/users/' + this.selectedUser().avatar)
+  //! tells typescript that we know that tis will be set to some value even if ys cant see it here, will be assigned outside the scope
+  @Input() avatar!: string;
+  @Input() name!: string;
 
-  //method inside the class
-  // get imagePath(){
-  //   return 'assets/users/' + this.selectedUser().avatar;
-  // }
+  get imagePath(){
+    return 'assets/users/' + this.avatar;
+  }
+  
+  onSelectUser() {}
+
+  //add users dynamically
+  // selectedUser = signal(DUMMY_USERS[randomIndex]);
+  // imagePath = computed(() => 'assets/users/' + this.selectedUser().avatar);
 
   //add method to call on event listener
-  onSelectUser(){
-    const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
-    this.selectedUser.set(DUMMY_USERS[randomIndex]);
-  }
+  //onSelectUser() {
+  // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+  // this.selectedUser.set(DUMMY_USERS[randomIndex]);
+  //}
 }
