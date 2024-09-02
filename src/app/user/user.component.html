@@ -1,5 +1,6 @@
 <div>
-  <button>
+  <!-- adding event listner to button by () -->
+  <button (click)="onSelectUser()">
     <!-- property binding-->
     <img [src]="imagePath" [alt]="selectedUser.id" />
     <span> {{ selectedUser.name }}</span>

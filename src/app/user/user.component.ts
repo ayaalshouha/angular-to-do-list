@@ -16,9 +16,14 @@ export class UserComponent {
 
   //add users dynamically
   selectedUser = DUMMY_USERS[randomIndex];
-  
+
   //method inside the class
   get imagePath(){
     return 'assets/users/' + this.selectedUser.avatar;
+
+  }
+  //add method to call on event listener
+  onSelectUser(){
+    console.log('clicked');
   }
 }
