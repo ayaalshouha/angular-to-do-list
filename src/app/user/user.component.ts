@@ -5,10 +5,11 @@ import {
   EventEmitter,
   input,
   Output,
+  output
 } from '@angular/core';
 import { DUMMY_USERS } from './dummy-users';
 
-const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+//const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
 @Component({
   selector: 'app-user',
@@ -28,8 +29,10 @@ export class UserComponent {
   @Output() select = new EventEmitter();
 
   //accept InputFunctions with Signals
+  // id = input.required<string>();
   // avatar = input.required<string>(); //this property should be an input to this componant
   // name = input.required<string>(); //<> using generic to decide what datatype should be assigned
+  // select = output<string>();
   // imagePath = computed(() => 'assets/users/' + this.avatar());
 
   get imagePath() {
