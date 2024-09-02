@@ -1,6 +1,12 @@
-import { Component, computed, Input, input, Output } from '@angular/core';
+import {
+  Component,
+  computed,
+  Input,
+  EventEmitter,
+  input,
+  Output,
+} from '@angular/core';
 import { DUMMY_USERS } from './dummy-users';
-import { EventEmitter } from 'stream';
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
@@ -16,9 +22,9 @@ export class UserComponent {
 
   // //! tells typescript that we know that tis will be set to some value even if ys cant see it here, will be assigned outside the scope
   //decorators are most common
-  @Input({required:true}) id!: string;
-  @Input({required:true}) avatar!: string;
-  @Input({required:true}) name!: string;
+  @Input({ required: true }) id!: string;
+  @Input({ required: true }) avatar!: string;
+  @Input({ required: true }) name!: string;
   @Output() select = new EventEmitter();
 
   //accept InputFunctions with Signals
@@ -26,7 +32,7 @@ export class UserComponent {
   // name = input.required<string>(); //<> using generic to decide what datatype should be assigned
   // imagePath = computed(() => 'assets/users/' + this.avatar());
 
-  get imagePath(){
+  get imagePath() {
     return 'assets/users/' + this.avatar;
   }
 
