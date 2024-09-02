@@ -18,8 +18,8 @@ export class UserComponent {
   // @Input({required:true}) name!: string;
 
   //accept Input with Signals
-  avatar = input<string>(); //this property should be an input to this componant
-  name = input<string>(); //<> generic to decide what datatype should be assigned
+  avatar = input.required<string>(); //this property should be an input to this componant
+  name = input.required<string>(); //<> using generic to decide what datatype should be assigned
 
   get imagePath() {
     return 'assets/users/' + this.avatar;
