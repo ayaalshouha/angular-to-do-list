@@ -12,7 +12,13 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 })
 
 export class UserComponent {
-  //all componant declared in the class will be available in template file
+  //all members declared in the class will be available in template file
+
   //add users dynamically
   selectedUser = DUMMY_USERS[randomIndex];
+  
+  //method inside the class
+  get imagePath(){
+    return 'assets/users/' + this.selectedUser.avatar;
+  }
 }

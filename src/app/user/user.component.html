@@ -1,10 +1,7 @@
 <div>
   <button>
     <!-- property binding-->
-    <img
-      [src]="'assets/users/' + selectedUser.avatar"
-      [alt]="selectedUser.id"
-    />
+    <img [src]="imagePath" [alt]="selectedUser.id" />
     <span> {{ selectedUser.name }}</span>
   </button>
 </div>
