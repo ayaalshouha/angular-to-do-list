@@ -1,13 +1,13 @@
 import {
   Component,
-  computed,
+  //computed,
   Input,
   EventEmitter,
-  input,
+  //input,
   Output,
-  output
+  //output
 } from '@angular/core';
-import { DUMMY_USERS } from './dummy-users';
+//import { DUMMY_USERS } from './dummy-users';
 
 //const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
@@ -21,14 +21,14 @@ import { DUMMY_USERS } from './dummy-users';
 export class UserComponent {
   //all members declared in the class will be available in template file
 
-  // //! tells typescript that we know that tis will be set to some value even if ys cant see it here, will be assigned outside the scope
+  // //! tells typescript that value will be assigned outside the scope
   //decorators are most common
   @Input({ required: true }) id!: string;
   @Input({ required: true }) avatar!: string;
   @Input({ required: true }) name!: string;
   @Output() select = new EventEmitter();
 
-  //accept InputFunctions with Signals
+  //accept InputFunctions with Signal
   // id = input.required<string>();
   // avatar = input.required<string>(); //this property should be an input to this componant
   // name = input.required<string>(); //<> using generic to decide what datatype should be assigned
@@ -42,7 +42,7 @@ export class UserComponent {
   onSelectUser() {
     this.select.emit(this.id);
 
-    //this set method will NOT work because input are readonly signals and can't be modified in UserComponant
+    //set method NOT work because input are readonly signals and can't be modified in UserComponant
     //this.avatar.set();
   }
 
