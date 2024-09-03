@@ -41,7 +41,6 @@ export class UserComponent {
 
   onSelectUser() {
     this.select.emit(this.id);
-
     //set method NOT work because input are readonly signals and can't be modified in UserComponant
     //this.avatar.set();
   }
