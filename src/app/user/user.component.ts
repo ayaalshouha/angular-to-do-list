@@ -23,9 +23,17 @@ export class UserComponent {
 
   // //! tells typescript that value will be assigned outside the scope
   //decorators are most common
-  @Input({ required: true }) id!: string;
-  @Input({ required: true }) avatar!: string;
-  @Input({ required: true }) name!: string;
+  // @Input({ required: true }) id!: string;
+  // @Input({ required: true }) avatar!: string;
+  // @Input({ required: true }) name!: string;
+
+  //input an object type
+  @Input({required:true}) user!:{
+    id:string,
+    avatar:string,
+    name:string
+  };
+
   @Output() select = new EventEmitter();
 
   //accept InputFunctions with Signal
@@ -36,11 +44,11 @@ export class UserComponent {
   // imagePath = computed(() => 'assets/users/' + this.avatar());
 
   get imagePath() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user.avatar;
   }
 
   onSelectUser() {
-    this.select.emit(this.id);
+    this.select.emit(this.user.id);
     //set method NOT work because input are readonly signals and can't be modified in UserComponant
     //this.avatar.set();
   }
