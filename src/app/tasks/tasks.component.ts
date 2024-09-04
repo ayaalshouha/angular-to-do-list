@@ -10,7 +10,8 @@ import { TaskComponent } from './task/task.component';
 export class TasksComponent {
   //? this might not be initialized
   // @Input() name: string | undefined;
-  @Input() name?: string;
+  @Input({ required: true }) name!: string;
+  @Input({ required: true }) userID!: string;
 
   //array of dummy tasks
   tasks = [
@@ -37,5 +38,9 @@ export class TasksComponent {
         'Prepare and describe an issue template which will help with project management',
       dueDate: '2024-06-15',
     },
-  ]
+  ];
+
+  get selectedUserTasks() {
+    return this.tasks.filter((task) => this.userID == task.userId);
+  }
 }
