@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { RequiredValidator } from '@angular/forms';
 
-interface task {
+interface Task {
   id: string;
   userId: string;
   title: string;
@@ -16,5 +16,5 @@ interface task {
   styleUrl: './task.component.css',
 })
 export class TaskComponent {
-  @Input({ required: true }) task!: task;
+  @Input({ required: true }) task!: Task;
 }
