@@ -11,6 +11,8 @@ export class TasksComponent {
   //? this might not be initialized
   // @Input() name: string | undefined;
   @Input() name?: string;
+
+  //array of dummy tasks
   tasks = [
     {
       id: 't1',
