@@ -2,9 +2,11 @@ import { Component, Input } from '@angular/core';
 import { RequiredValidator } from '@angular/forms';
 
 interface task {
-  title:string,
-  time:string,
-  summary:string
+  id: string;
+  userId: string;
+  title: string;
+  summary: string;
+  dueDate: string;
 }
 @Component({
   selector: 'app-task',
