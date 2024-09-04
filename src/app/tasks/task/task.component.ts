@@ -1,6 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { RequiredValidator } from '@angular/forms';
 
+interface task {
+  title:string,
+  time:string,
+  summary:string
+}
 @Component({
   selector: 'app-task',
   standalone: true,
@@ -9,7 +14,5 @@ import { RequiredValidator } from '@angular/forms';
   styleUrl: './task.component.css',
 })
 export class TaskComponent {
-  @Input({ required: true }) title!: string;
-  @Input({ required: true }) time!: string;
-  @Input({ required: true }) summary!: string;
+  @Input({ required: true }) task!: task;
 }
