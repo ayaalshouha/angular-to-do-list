@@ -32,7 +32,7 @@ export class UserComponent {
 
   //input an object type
   @Input({ required: true }) user!: User;
-
+  @Input({required:true}) selected!: boolean;
   @Output() select = new EventEmitter();
 
   //accept InputFunctions with Signal
