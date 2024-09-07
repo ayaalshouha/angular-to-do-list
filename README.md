@@ -1,1 +1,1 @@
-# educational-angular-course
+# angular-to-do-list
