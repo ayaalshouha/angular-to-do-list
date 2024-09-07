@@ -14,6 +14,7 @@
   </ul>
 </section>
 
+<!-- new task logic / create cancel -->
 @if(isAddingTask){
-<app-new-task (cancel)="onCancelNewTask()"> </app-new-task>
+<app-new-task (cancel)="onCancelNewTask()" (create)="onCreateTask($event)"> </app-new-task>
 }

@@ -55,4 +55,7 @@ export class TasksComponent {
   onCancelNewTask() {
     this.isAddingTask = false;
   }
+  onCreateTask(){
+
+  }
 }
