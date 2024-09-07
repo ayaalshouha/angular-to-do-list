@@ -15,7 +15,5 @@
 </section>
 
 @if(isAddingTask){
-  <app-new-task>
-
-  </app-new-task>
+<app-new-task (cancel)="onCancelNewTask()"> </app-new-task>
 }
