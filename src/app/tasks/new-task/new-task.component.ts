@@ -1,15 +1,16 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { isValidDate } from 'rxjs/internal/util/isDate';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-new-task',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './new-task.component.html',
   styleUrl: './new-task.component.css',
 })
 export class NewTaskComponent {
   @Output() cancel = new EventEmitter();
+
+  enteredTitle = '';
 
   onCancel() {
     this.cancel.emit();
