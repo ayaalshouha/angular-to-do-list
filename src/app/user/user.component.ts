@@ -8,6 +8,7 @@ import {
   //output
 } from '@angular/core';
 
+import { CardComponent } from '../shared/card/card.component';
 import { type User } from './user.model';
 
 //import { DUMMY_USERS } from './dummy-users';
@@ -17,7 +18,7 @@ import { type User } from './user.model';
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
 })

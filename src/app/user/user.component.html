@@ -1,8 +1,8 @@
-<div>
+<app-card>
   <!-- adding event listner to button by () -->
   <button [class.active]="selected" (click)="onSelectUser()">
     <!-- property binding-->
     <img [src]="imagePath" [alt]="user.name" />
     <span> {{ user.name }}</span>
   </button>
-</div>
+</app-card>
