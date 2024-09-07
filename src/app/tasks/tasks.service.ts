@@ -29,6 +29,14 @@ export class TaskService {
     },
   ];
 
+  constructor() {
+    //keeping the tasks array incase no tasks found in local storage
+    const tasks = localStorage.getItem('tasks');
+    if (tasks) {
+      this.tasks = JSON.parse(tasks);
+    }
+  }
+
   getUserTasks(userID: string) {
     return this.tasks.filter((task) => userID == task.userId);
   }
@@ -41,9 +49,16 @@ export class TaskService {
       dueDate: taskData.date,
       userId: userID,
     });
+    this.saveTasks();
   }
 
   CompleteTask(id: string) {
     this.tasks = this.tasks.filter((task) => task.id !== id);
+    this.saveTasks();
+  }
+
+  private saveTasks() {
+    //save tasks array into local storage as json
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 }
