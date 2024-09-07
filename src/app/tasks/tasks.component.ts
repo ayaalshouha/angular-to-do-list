@@ -16,16 +16,21 @@ export class TasksComponent {
   @Input({ required: true }) userID!: string;
   isAddingTask = false;
 
+  // one instance for all componant operate on the same data on memory
   constructor(private tasksService: TaskService) {}
 
-  getSelectedUserTasks() {
+  get SelectedUserTasks() {
     return this.tasksService.getUserTasks(this.userID);
+  }
+
+  onCompleteTask(id: string) {
+    //return this.tasksService.CompleteTask(this.userID);
   }
 
   onStartATask() {
     this.isAddingTask = true;
   }
-  onCancelNewTask() {
+  onCloseNewTask() {
     this.isAddingTask = false;
   }
 }
