@@ -13,11 +13,11 @@ import { TaskService } from '../tasks.service';
 })
 export class TaskComponent {
   @Input({ required: true }) task!: Task;
-  //@Output() complete = new EventEmitter<string>();
+
+  //injecting the service either by inject function or by constructor
   private taskService = inject(TaskService);
 
   onCompleteTask() {
     this.taskService.CompleteTask(this.task.id);
-    // this.complete.emit();
   }
 }
