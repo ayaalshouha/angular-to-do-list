@@ -1,3 +1,9 @@
+<!-- new task logic / create cancel -->
+@if(isAddingTask){
+<app-new-task (cancel)="onCancelNewTask()" (create)="onCreateTask($event)">
+</app-new-task>
+}
+
 <section id="tasks">
   <header>
     <h2>{{ name }}'s Tasks</h2>
@@ -13,8 +19,3 @@
     }
   </ul>
 </section>
-
-<!-- new task logic / create cancel -->
-@if(isAddingTask){
-<app-new-task (cancel)="onCancelNewTask()" (create)="onCreateTask($event)"> </app-new-task>
-}
