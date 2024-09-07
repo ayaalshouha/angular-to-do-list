@@ -11,6 +11,8 @@ export class NewTaskComponent {
   @Output() cancel = new EventEmitter();
 
   enteredTitle = '';
+  enteredSummary = '';
+  enteredDate = '';
 
   onCancel() {
     this.cancel.emit();
