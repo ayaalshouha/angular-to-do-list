@@ -1,4 +1,4 @@
-import { Component , Output, EventEmitter} from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { isValidDate } from 'rxjs/internal/util/isDate';
 
 @Component({
@@ -9,11 +9,9 @@ import { isValidDate } from 'rxjs/internal/util/isDate';
   styleUrl: './new-task.component.css',
 })
 export class NewTaskComponent {
-  isDialogCanceled = false;
-  @Output() cancel =new EventEmitter<boolean>();
+  @Output() cancel = new EventEmitter();
 
   onCancel() {
-    this.isDialogCanceled = true;
-    this.cancel.emit(this.isDialogCanceled);
+    this.cancel.emit();
   }
 }
