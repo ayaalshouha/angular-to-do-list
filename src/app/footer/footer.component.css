@@ -5,6 +5,8 @@ footer {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
   width: 100%;
   padding: 0.3rem;
+  position: relative;
+  bottom: 0;
 }
 
 p {
