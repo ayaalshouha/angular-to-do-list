@@ -16,7 +16,8 @@ export class TasksComponent {
   @Input({ required: true }) userID!: string;
   isAddingTask = false;
 
-  // one instance for all componant operate on the same data on memory
+  //Injection by constructor
+  //One instance for all componant operate on the same data on memory
   constructor(private tasksService: TaskService) {}
 
   get SelectedUserTasks() {
