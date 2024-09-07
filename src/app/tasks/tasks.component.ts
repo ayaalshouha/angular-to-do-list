@@ -24,7 +24,7 @@ export class TasksComponent {
   }
 
   onCompleteTask(id: string) {
-    //return this.tasksService.CompleteTask(this.userID);
+    return this.tasksService.CompleteTask(this.userID);
   }
 
   onStartATask() {
